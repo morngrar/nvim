@@ -45,4 +45,12 @@ return require('packer').startup(function(use)
 		}
 	}
 
+<<<<<<< Updated upstream
+=======
+    use("fatih/vim-go")
+    use {
+        "mfussenegger/nvim-jdtls",
+        ft = { "java" },
+    }
+>>>>>>> Stashed changes
 end)
