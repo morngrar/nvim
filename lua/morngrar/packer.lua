@@ -45,12 +45,14 @@ return require('packer').startup(function(use)
 		}
 	}
 
-<<<<<<< Updated upstream
-=======
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
     use("fatih/vim-go")
     use {
         "mfussenegger/nvim-jdtls",
         ft = { "java" },
     }
->>>>>>> Stashed changes
 end)
