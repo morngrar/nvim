@@ -56,6 +56,17 @@ return require('packer').startup(function(use)
         ft = { "java" },
     }
 
+    -- flutter stuff
+    use {'stevearc/dressing.nvim'}
+    use "nvim-lua/plenary.nvim"
+    use {
+        'akinsho/flutter-tools.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+    }
+
 
     -- debugger client:
     use('mfussenegger/nvim-dap')
