@@ -49,6 +49,14 @@ dap.listeners.before.event_exited["dapui_config"]=function()
 end
 
 
+-- dap-go
+require("dap-go").setup {
+    delve = {
+        port = "38697",
+    },
+}
+
+
 -- pretty
 vim.fn.sign_define('DapBreakpoint',{ text ='🟥', texthl ='', linehl ='', numhl =''})
 vim.fn.sign_define('DapStopped',{ text ='▶️', texthl ='', linehl ='', numhl =''})

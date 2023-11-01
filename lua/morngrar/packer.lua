@@ -85,4 +85,8 @@ return require('packer').startup(function(use)
         pathStrict = true,
 
     })
+
+    -- go needs separate thing
+    use 'leoluz/nvim-dap-go' -- Install the plugin with Packer
+
 end)
