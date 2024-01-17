@@ -51,6 +51,10 @@ return require('packer').startup(function(use)
     }
 
     use("fatih/vim-go")
+    use {
+        "mfussenegger/nvim-jdtls",
+        ft = { "java" },
+    }
 
     -- flutter stuff
     use {'stevearc/dressing.nvim'}
