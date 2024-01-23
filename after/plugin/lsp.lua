@@ -15,6 +15,9 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	["<C-Space>"] = cmp.mapping.complete(),
 })
 
+local capabilities = require("cmp_nvim_lsp")
+    .default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 
 --lsp.set_preferences({
 --	sign_icons = { }
