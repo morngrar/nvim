@@ -40,8 +40,9 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+local lspconfig = require("lspconfig")
 
-require("lspconfig").pylsp.setup {
+lspconfig.pylsp.setup {
 settings = {
     pylsp = {
     plugins = {
