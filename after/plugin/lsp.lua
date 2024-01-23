@@ -72,6 +72,14 @@ flags = {
 capabilities = capabilities,
 }
 
+local pid = vim.fn.getpid()
+local omnisharp_bin = "/home/sk/.local/share/nvim/mason/packages/omnisharp/omnisharp"
+lspconfig.omnisharp.setup{
+    cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid), },
+    -- more configuration?
+    capabilities = capabilities
+}
+
 lsp.setup()
 
 -- The following bit is to supress the `vim` global undefined warnings of the lua lsp

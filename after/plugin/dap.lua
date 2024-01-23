@@ -35,6 +35,24 @@ dap.configurations.cpp = {
 dap.configurations.c = dap.configurations.cpp
 
 
+-- for c#
+dap.adapters.coreclr = {
+  type = 'executable',
+  command = '/home/sk/.local/share/nvim/mason/packages/netcoredbg/netcoredbg',
+  args = {'--interpreter=vscode'}
+}
+dap.configurations.cs = {
+      {
+    type = "coreclr",
+    name = "launch - netcoredbg",
+    request = "launch",
+    program = function()
+        return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+    end,
+  },
+}
+
+
 -- dapui
 local dapui = require("dapui")
 dapui.setup()
