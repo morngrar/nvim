@@ -67,6 +67,9 @@ return require('packer').startup(function(use)
         },
     }
 
+    -- extending omnisharp
+    use {'Hoffs/omnisharp-extended-lsp.nvim'}
+
 
     -- debugger client:
     use('mfussenegger/nvim-dap')

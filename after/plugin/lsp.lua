@@ -77,6 +77,9 @@ local omnisharp_bin = "/home/sk/.local/share/nvim/mason/packages/omnisharp/omnis
 lspconfig.omnisharp.setup{
     cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid), },
     -- more configuration?
+    handlers = {
+        ["textDocument/definition"] = require('omnisharp_extended').handler,
+    },
     capabilities = capabilities
 }
 
