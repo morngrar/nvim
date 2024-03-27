@@ -113,7 +113,7 @@ local config = {
         "org"
       },
     },
-    extendedClientCapabilities = extendedClientCapabilities,
+    --extendedClientCapabilities = extendedClientCapabilities,
     sources = {
       organizeImports = {
         starThreshold = 9999,
@@ -150,6 +150,6 @@ end
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
-require('jdtls').start_or_attach(config)
+jdtls.start_or_attach(config)
 
 
