@@ -19,6 +19,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- default to 4-space indenting and tabs
+vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.opt.expandtab = true
@@ -139,6 +140,7 @@ require("lazy").setup({
   require 'morngrar/plugins/todo-comments',
   require 'morngrar/plugins/mini-nvim',
   require 'morngrar/plugins/dap',
+  require 'morngrar/plugins/vim-go',
 
   -- "gc" to comment visual regions/lines
   { "numToStr/Comment.nvim", opts = {} },
