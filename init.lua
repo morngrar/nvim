@@ -134,6 +134,7 @@ require("lazy").setup({
   require 'morngrar/plugins/telescope',
   require 'morngrar/plugins/autoformat',
   require 'morngrar/plugins/autocomplete',
+  require 'morngrar/plugins/autopairs',
   require 'morngrar/plugins/lsp',
   require 'morngrar/plugins/colorscheme',
   require 'morngrar/plugins/treesitter',
