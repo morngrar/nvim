@@ -143,6 +143,7 @@ require("lazy").setup({
   require 'morngrar/plugins/dap',
   require 'morngrar/plugins/vim-go',
   require 'morngrar/plugins/linting',
+  require 'morngrar/plugins/mdx',
 
   -- "gc" to comment visual regions/lines
   { "numToStr/Comment.nvim", opts = {} },
