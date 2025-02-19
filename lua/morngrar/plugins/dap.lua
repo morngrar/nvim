@@ -45,6 +45,7 @@ return {
     vim.keymap.set("n", "<S-F8>", dap.step_out)
     vim.keymap.set("n", "<F9>", dap.continue)
     vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
+    vim.keymap.set('n', '<leader><C-b>', dap.clear_breakpoints, { desc = 'Debug: Clear Breakpoints' })
     vim.keymap.set('n', '<leader>B', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
