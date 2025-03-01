@@ -195,6 +195,10 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("v", "<leader>d", '"_d')
 
+-- make command and opening quicklist
+vim.keymap.set("n", "<M-m>", ":make<CR>")
+vim.keymap.set("n", "<M-q>", ":copen<CR>")
+
 -- better quicklist navigation
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
