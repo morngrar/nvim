@@ -92,7 +92,11 @@ return { -- LSP Configuration & Plugins
 
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.
-        map("K", vim.lsp.buf.hover, "Hover Documentation")
+        map("K",
+          function()
+            vim.lsp.buf.hover({ border = "rounded", title = " Docs " })
+          end,
+          "Hover Documentation")
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
@@ -213,7 +217,7 @@ return { -- LSP Configuration & Plugins
 
         -- NOTE: at least getting rounded corners back:
         -- see https://neovim.io/doc/user/options.html#'winborder' for any other possibilities
-        vim.o.winborder = 'rounded'
+        -- vim.o.winborder = 'rounded'
 
         -- The following autocommand is used to enable inlay hints in your
         -- code, if the language server you are using supports them
