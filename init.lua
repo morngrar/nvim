@@ -142,7 +142,7 @@ require("lazy").setup({
   require 'morngrar/plugins/mini-nvim',
   require 'morngrar/plugins/dap',
   require 'morngrar/plugins/vim-go',
-  require 'morngrar/plugins/linting',
+  require 'morngrar/plugins/linting', -- NOTE: make sure eslint_d is installed using Mason
   require 'morngrar/plugins/mdx',
 
   -- "gc" to comment visual regions/lines
