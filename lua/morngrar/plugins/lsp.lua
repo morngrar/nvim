@@ -297,8 +297,9 @@ return { -- LSP Configuration & Plugins
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-    require("java").setup()
-    require("lspconfig").jdtls.setup({})
+    -- NOTE: java setup collides in some way with mason-lspconfig on the tuxedo machine...
+    -- require("java").setup()
+    -- require("lspconfig").jdtls.setup({})
 
     require("mason-lspconfig").setup({
       handlers = {
