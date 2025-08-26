@@ -31,6 +31,7 @@ return { -- Autoformat
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
+      cs = { "csharpier" },
       javascript = { "prettierd", "prettier" },
       typescript = { "prettierd", "prettier" },
       javascriptreact = { "prettierd", "prettier" },

@@ -39,6 +39,9 @@ return { -- LSP Configuration & Plugins
     --
     -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
     -- and elegantly composed help section, `:help lsp-vs-treesitter`
+    --
+
+
 
     --  This function gets run when an LSP attaches to a particular buffer.
     --    That is to say, every time a new file is opened that is associated with
@@ -291,7 +294,15 @@ return { -- LSP Configuration & Plugins
     --    :Mason
     --
     --  You can press `g?` for help in this menu.
-    require("mason").setup()
+    -- require("mason").setup()
+
+    -- NOTE: For updated C#/.NET LSP and linting
+    require("mason").setup({
+      registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+      },
+    })
 
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
