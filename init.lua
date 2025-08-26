@@ -88,7 +88,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>vde", vim.diagnostic.open_float, { desc = "Show [D]iagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>vdq", vim.diagnostic.setloclist, { desc = "Open [D]iagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>vdq", vim.diagnostic.setqflist, { desc = "Open [D]iagnostic [Q]uickfix list" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
