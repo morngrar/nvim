@@ -112,6 +112,13 @@ return { -- LSP Configuration & Plugins
           { buffer = event.buf, desc = "LSP: Signature [H]elp" }
         )
 
+        vim.keymap.set(
+          "n",
+          "<M-m>",
+          ":Dotnet build quickfix<CR>",
+          { desc = "Easy Dotnet: Build with quickfix" }
+        )
+
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
         --    See `:help CursorHold` for information about when this is executed
