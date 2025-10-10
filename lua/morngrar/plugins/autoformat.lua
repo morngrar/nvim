@@ -5,7 +5,7 @@ return { -- Autoformat
     {
       "<leader>f",
       function()
-        require("conform").format({ async = true, lsp_fallback = true })
+        require("conform").format({ async = true, lsp_fallback = "never" })
       end,
       mode = "",
       desc = "[F]ormat buffer",
@@ -32,10 +32,14 @@ return { -- Autoformat
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
       cs = { "csharpier" },
-      javascript = { "prettierd", "prettier" },
-      typescript = { "prettierd", "prettier" },
-      javascriptreact = { "prettierd", "prettier" },
-      typescriptreact = { "prettierd", "prettier" },
+      -- javascript = { "prettierd", "prettier" },
+      -- typescript = { "prettierd", "prettier" },
+      -- javascriptreact = { "prettierd", "prettier" },
+      -- typescriptreact = { "prettierd", "prettier" },
+      javascript = { "biome", "biome-organize-imports" },
+      javascriptreact = { "biome", "biome-organize-imports" },
+      typescript = { "biome", "biome-organize-imports" },
+      typescriptreact = { "biome", "biome-organize-imports" },
       svelte = { "prettierd", "prettier" },
       css = { "prettierd", "prettier" },
       html = { "prettierd", "prettier" },
