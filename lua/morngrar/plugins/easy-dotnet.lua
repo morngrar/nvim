@@ -102,6 +102,16 @@ return {
         vim.keymap.set("n", "<C-p>", function()
             dotnet.run_project()
         end)
+
+
+        vim.keymap.set("n", "<leader>t", function()
+            dotnet.testrunner_refresh_build()
+            dotnet.testrunner()
+        end)
+
+        vim.keymap.set("n", "<leader>T", function()
+            dotnet.test_solution()
+        end)
     end
 
 }

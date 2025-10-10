@@ -137,10 +137,17 @@ return {
     local dotnet = require("easy-dotnet")
     local debug_dll = nil
 
-    local function ensure_dll()
+    local function ensure_dll(pick)
       if debug_dll ~= nil then
         return debug_dll
       end
+
+      if pick then
+        local dll = dotnet.get_debug_dll(false)
+        debug_dll = dll
+        return dll
+      end
+
       local dll = dotnet.get_debug_dll(true)
       debug_dll = dll
       return dll
@@ -150,7 +157,7 @@ return {
       dap.configurations[value] = {
         {
           type = "coreclr",
-          name = "Program",
+          name = "Default (last)",
           request = "launch",
           env = function()
             local dll = ensure_dll()
@@ -170,7 +177,28 @@ return {
         },
         {
           type = "coreclr",
-          name = "Test",
+          name = "Pick",
+          request = "launch",
+          env = function()
+            local dll = ensure_dll(true)
+            local vars = dotnet.get_environment_variables(dll.project_name, dll.relative_project_path, false)
+            return vars or nil
+          end,
+          program = function()
+            local dll = ensure_dll(true)
+            local co = coroutine.running()
+            rebuild_project(co, dll.project_path)
+            return dll.relative_dll_path
+          end,
+          cwd = function()
+            local dll = ensure_dll(true)
+            return dll.relative_project_path
+          end
+        },
+
+        {
+          type = "coreclr",
+          name = "Test (doesn't work with newest xUnit)",
           request = "attach",
           processId = function()
             local res = require("easy-dotnet").experimental.start_debugging_test_project()
