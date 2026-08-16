@@ -143,7 +143,6 @@ require("lazy").setup({
   require 'morngrar/plugins/dap',
   require 'morngrar/plugins/vim-go',
   require 'morngrar/plugins/linting', -- NOTE: make sure eslint_d is installed using Mason
-  require 'morngrar/plugins/mdx',
   require 'morngrar/plugins/easy-dotnet',
   require 'morngrar/plugins/roslyn',
 
