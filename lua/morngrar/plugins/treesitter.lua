@@ -1,7 +1,7 @@
 return { -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  branch = 'main',
+  branch = "main",
 
   opts = {
     -- Autoinstall languages that are not installed
@@ -26,20 +26,19 @@ return { -- Highlight, edit, and navigate code
       "luadoc",
       "markdown",
       "vim",
-      "vimdoc"
+      "xml",
+      "vimdoc",
     }
 
-    local alreadyInstalled = require('nvim-treesitter').get_installed()
+    local alreadyInstalled = require("nvim-treesitter").get_installed()
     local parsersToInstall = vim.iter(ensureInstalled)
-        :filter(function(parser)
-          return not vim.tbl_contains(alreadyInstalled, parser)
-        end)
-        :totable()
-    require('nvim-treesitter').install(parsersToInstall)
+      :filter(function(parser)
+        return not vim.tbl_contains(alreadyInstalled, parser)
+      end)
+      :totable()
+    require("nvim-treesitter").install(parsersToInstall)
 
-
-
-    vim.api.nvim_create_autocmd('FileType', {
+    vim.api.nvim_create_autocmd("FileType", {
 
       callback = function()
         -- Enable treesitter highlighting and disable regex syntax
