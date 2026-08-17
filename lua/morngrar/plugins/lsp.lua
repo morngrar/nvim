@@ -113,10 +113,10 @@ return { -- LSP Configuration & Plugins
         )
 
         vim.keymap.set(
-          "n",
-          "<M-m>",
-          ":Dotnet build quickfix<CR>",
-          { desc = "Easy Dotnet: Build with quickfix" }
+            "n",
+            "<M-S-m>",
+            ":Dotnet build quickfix<CR>",
+            { desc = "Easy Dotnet: Build with quickfix" }
         )
 
         -- The following two autocommands are used to highlight references of the
